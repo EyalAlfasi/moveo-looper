@@ -1,0 +1,78 @@
+.open-recordings-btn-container {
+    & .badge {
+        background-color: $white;
+        display: inline-block;
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        font-weight: 700;
+        color: $black;
+    }
+    & .open-recordings-btn {
+        padding: 10px 20px;
+        border-radius: 50px;
+        color: $white;
+        font-size: rem(20px);
+        cursor: pointer;
+        background-color: $red;
+        border: none;
+        transition: background 0.2s ease;
+        &:hover {
+            background-color: $lightred;
+        }
+    }
+}
+
+.recordings-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: rem(20px);
+    @include for-mobile-layout-up {
+        max-width: 300px;
+    }
+    background-color: $black;
+    color: $white;
+    z-index: 10;
+    transition: transform 0.4s ease;
+
+    & .close-recordings-section {
+        margin-bottom: 25px;
+        & i {
+            font-size: rem(25px);
+            background-color: $black2;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            &:hover {
+                background-color: $black3;
+            }
+        }
+    }
+
+    & .recordings-list-title {
+        font-weight: 400;
+        font-size: rem(30px);
+        margin-bottom: 50px;
+    }
+
+    & .no-recordings-section {
+        text-align: center;
+        & img {
+            max-width: 50%;
+            margin-bottom: 20px;
+        }
+
+        & h4 {
+            font-weight: 400;
+        }
+    }
+}

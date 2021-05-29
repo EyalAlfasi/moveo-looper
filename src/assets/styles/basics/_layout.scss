@@ -1,0 +1,33 @@
+.main-layout{
+    padding: 0 2rem;
+    @include for-mobile-layout-up{
+        padding: 0 6rem;
+    }
+
+    @include for-tablet-layout-up{
+        padding: 0 10rem;
+    }
+
+    @include for-desktop-sm-layout-up{
+        padding: 0 14rem;
+    }
+
+    
+    @include for-desktop-md-layout-up{
+        padding: 0 18rem;
+    }
+
+    
+    @include for-desktop-lg-layout-up{
+        padding: 0 22rem;
+    }
+
+    
+}
+
+.main-header-layout{
+    padding: 0 1rem;
+    @include for-mobile-layout-up{
+        padding: 0 2rem;
+    }
+}

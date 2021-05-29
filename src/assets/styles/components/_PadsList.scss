@@ -1,0 +1,11 @@
+.pads-page-wrapper {
+    & .pads-container {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        @include for-tablet-layout-up {
+            grid-template-columns: repeat(3, 150px);
+        }
+        gap: 20px;
+    }
+}

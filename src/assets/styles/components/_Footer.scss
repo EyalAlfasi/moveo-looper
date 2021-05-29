@@ -1,0 +1,20 @@
+.footer-wrapper {
+    min-height: 200px;
+    span {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 2px solid $red;
+        color: $white;
+        letter-spacing: 2px;
+        cursor: pointer;
+        margin-bottom: 25px;
+        transition: background 0.5s ease, box-shadow 0.5s ease;
+        &:hover {
+            background-color: $red;
+            box-shadow: 0 0 5px $red, 0 0 25px $red, 0 0 50px $red;
+        }
+    }
+    & i {
+    margin: 10px;
+    }
+}

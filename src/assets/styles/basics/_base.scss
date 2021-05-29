@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.1em;
+}
+
+p {
+    margin: 0 0 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+input,
+textarea {
+    font-family: "Roboto", sans-serif;
+}
+
+.dark-overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.25);
+    animation: fade 0.4s ease;
+}
+
+.icon-button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: rem(20px);
+    text-align: center;
+    padding: 15px;
+    background: $black;
+    box-shadow: 5px 5px 10px #1d1d1d, -5px -5px 10px #272727;
+    cursor: pointer;
+    &:hover {
+        box-shadow: inset 5px 5px 10px #1d1d1d, inset -5px -5px 10px #272727;
+    }
+    &::before {
+        color: $red;
+    }
+}
