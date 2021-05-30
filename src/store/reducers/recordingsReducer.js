@@ -7,7 +7,6 @@ const initialState = {
 export const recordingsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_RECORDINGS:
-            console.log(action.recordings);
             return { ...state, recordings: [...action.recordings] }
         case SAVE_RECORDING:
             return { ...state, recordings: [...state.recordings, action.recording] }

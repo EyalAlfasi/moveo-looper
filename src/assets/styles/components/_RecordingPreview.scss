@@ -1,5 +1,9 @@
 .recording-preview-wrapper {
-    padding: 15px;
+    padding: 5px 15px;
     border-radius: 50px;
     box-shadow: 6px 6px 12px #1d1d1d, -6px -6px 12px #272727;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
 }

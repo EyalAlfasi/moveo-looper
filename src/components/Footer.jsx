@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const _Footer = ({ onToggleLoopPause, onResetAll, onPlayAllSounds, onStartRecording, onStopRecording }) => {
+    //All footer controlles come from the parent component
 
     const isLooperRunning = useSelector(state => state.soundsReducer.isLooperRunning)
 

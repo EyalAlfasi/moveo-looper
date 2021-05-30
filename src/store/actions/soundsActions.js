@@ -10,7 +10,7 @@ import {
 } from "../reducers/soundsReducer"
 
 export function loadSounds() {
-    const sounds = soundService.getSounds()
+    const sounds = soundService.getSounds() // Getting the array of sounds from service
     const action = {
         type: LOAD_SOUNDS,
         sounds

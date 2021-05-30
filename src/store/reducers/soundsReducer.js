@@ -7,10 +7,11 @@ export const STOP_ALL_SOUNDS = 'STOP_ALL_SOUNDS';
 export const RESET_LOOPER = 'RESET_LOOPER';
 
 const initialState = {
-    isLooperRunning: false,
-    sounds: [],
-    queue: {},
-    activeSoundsCount: 0,
+    isLooperRunning: false, // Boolean for looper running state
+    sounds: [], // The array of sounds
+    queue: {}, // an object representing the queue, it's an object because it's more efficiant 
+    // to check from the PadPreview component if the sound is in queue or not, instead for running in a loop on every render
+    activeSoundsCount: 0, // Counting how many sounds are active
 }
 
 export const soundsReducer = (state = initialState, action) => {
@@ -19,8 +20,9 @@ export const soundsReducer = (state = initialState, action) => {
             const { sounds } = action
             return { ...state, sounds }
         case QUEUE_SOUND:
-            const currentSound = state.sounds.find(sound => sound._id === action.soundId)
-            if (currentSound.isPlaying) {
+            const currentSound = state.sounds.find(sound => sound._id === action.soundId) // Get's the sound by the 
+            // id recieved in the action
+            if (currentSound.isPlaying) { // If it's already playing, then make .isPlaying false
                 return {
                     ...state,
                     sounds: state.sounds.map(sound => {
@@ -29,7 +31,8 @@ export const soundsReducer = (state = initialState, action) => {
                     }),
                     activeSoundsCount: state.activeSoundsCount - 1
                 }
-            } else if (!state.activeSoundsCount && !Object.keys(state.queue).length) {
+            } else if (!state.activeSoundsCount && !Object.keys(state.queue).length) { // if it's the first sound clicked on, 
+                // then don't queue it, activate it instantly
                 return {
                     ...state,
                     sounds: state.sounds.map(sound => {
@@ -38,8 +41,10 @@ export const soundsReducer = (state = initialState, action) => {
                     }),
                     activeSoundsCount: state.activeSoundsCount + 1
                 }
-            } else if (state.queue[action.soundId]) {
-                return { ...state, ... delete state.queue[action.soundId] }
+            } else if (state.queue[action.soundId]) { // If it's already in queue, remove it
+                const queueCopy = Object.assign({}, state.queue)
+                delete queueCopy[action.soundId]
+                return { ...state, queue: queueCopy }
             } else {
                 return { ...state, queue: { ...state.queue, [action.soundId]: 1 } }
             }

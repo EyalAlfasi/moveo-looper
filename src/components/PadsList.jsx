@@ -3,8 +3,9 @@ import { PadPreview } from './PadPreview'
 
 export const PadsList = ({ sounds, currentLoopTime }) => {
 
+    //Just a list component that renders all pads
+
     return (
-        <div className="pads-page-wrapper flex column space-between">
             <div className="pads-container">
                 {sounds && sounds.map((sound) => {
                     return <PadPreview
@@ -13,7 +14,6 @@ export const PadsList = ({ sounds, currentLoopTime }) => {
                         currentLoopTime={currentLoopTime}
                     />
                 })}
-            </div>
         </div>
     )
 }

@@ -5,16 +5,17 @@ import { loadRecordings } from '../store/actions/recordingsActions'
 import { RecordingPreview } from './RecordingPreview'
 
 export const RecordingsList = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false) // Boolean state for recordings list drawer
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(loadRecordings())
-    }, [])
+    const recordings = useSelector(state => state.recordingsReducer.recordings) // Importing the recordings from global state
 
-    const recordings = useSelector(state => state.recordingsReducer.recordings)
-    
+    useEffect(() => {
+        dispatch(loadRecordings()) // Load recordings from local storage to global state (Redux store)
+    }, [dispatch])
+
+
     return (
         <>
             <span className="open-recordings-btn-container relative">
@@ -42,12 +43,12 @@ export const RecordingsList = () => {
                 <h2 className="recordings-list-title">My recordings</h2>
                 {!recordings.length ?
                     <div className="no-recordings-section">
-                        <img src={microphone} />
+                        <img src={microphone} alt="microphon icon"/>
                         <h4>Nothing here... <br /> Record your first session!</h4>
                     </div>
                     : recordings.map((recording, idx) => {
                         return <RecordingPreview
-                            key={recording.src}
+                            key={recording._id}
                             recording={recording}
                             idx={idx + 1}
                         />

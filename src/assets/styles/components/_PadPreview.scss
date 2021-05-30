@@ -2,8 +2,12 @@
     width: rem(80px);
     height: rem(80px);
     @include for-tablet-layout-up {
-        width: rem(150px);
-        height: rem(150px);
+        width: rem(100px);
+        height: rem(100px);
+    }
+    @include for-desktop-lg-layout-up {
+        width: rem(120px);
+        height: rem(120px);
     }
     position: relative;
     overflow: hidden;
