@@ -1,0 +1,2 @@
+(this["webpackJsonpmoveo-looper"]=this["webpackJsonpmoveo-looper"]||[]).push([[4],{40:function(o,s,e){"use strict";e.r(s),s.default=e.p+"static/media/bass-guitar.c75f4965.svg"}}]);
+//# sourceMappingURL=4.49c1933f.chunk.js.map

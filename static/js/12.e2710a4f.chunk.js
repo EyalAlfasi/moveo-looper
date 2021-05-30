@@ -1,0 +1,2 @@
+(this["webpackJsonpmoveo-looper"]=this["webpackJsonpmoveo-looper"]||[]).push([[12],{48:function(o,e,s){"use strict";s.r(e),e.default=s.p+"static/media/saxophone.6e15bd71.svg"}}]);
+//# sourceMappingURL=12.e2710a4f.chunk.js.map
